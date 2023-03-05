@@ -1,12 +1,18 @@
 
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer expand-on-hover rail model-value>
+    <v-navigation-drawer
+      color="indigo-darken-2"
+      expand-on-hover
+      rail
+      model-value
+      v-model="drawer"
+    >
       <v-list>
         <v-list-item
-          prepend-avatar="https://randomuser.me/api/portraits/women/85.jpg"
-          title="Sandra Adams"
-          subtitle="sandra_a88@gmailcom"
+          prepend-avatar="/src/assets/bussinLogo.png"
+          title="Abdelrhman Ashraf"
+          subtitle="qouay555@gmail.com"
         ></v-list-item>
       </v-list>
 
@@ -14,22 +20,30 @@
 
       <v-list density="compact" nav>
         <v-list-item
-          :prepend-icon="['fas', 'home']"
-          color="info"
+          prepend-icon="fas fa-list"
+          color="warning"
           title="TodoList Page"
           value="todolist"
           to="/"
         >
         </v-list-item>
         <v-list-item
-          prepend-icon="fas fa-home"
-          color="info"
+          prepend-icon="fas fa-address-card"
+          color="indigo"
           title="About Page"
           value="about"
           to="/about"
         ></v-list-item>
       </v-list>
     </v-navigation-drawer>
+
+    <v-app-bar class="text-right text-white px-3" color="indigo-darken-4">
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title
+        >ToDoList Application | With <v-icon icon="fab fa-vuejs"></v-icon> AS
+      </v-toolbar-title>
+    </v-app-bar>
 
     <v-main>
       <RouterView />
@@ -40,6 +54,17 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { ref, defineComponent } from "vue";
+
+const drawer = ref(false);
+
+// To Add Icons On This Page >>>>>
+// this is must have
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faList, faAddressCard } from "@fortawesome/free-solid-svg-icons";
+import { faVuejs } from "@fortawesome/free-brands-svg-icons";
+
+library.add([faList, faAddressCard]);
+library.add(faVuejs);
 </script>
 
 

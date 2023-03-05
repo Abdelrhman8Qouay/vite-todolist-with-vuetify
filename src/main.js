@@ -13,6 +13,7 @@ import { aliases, fa } from 'vuetify/lib/iconsets/fa-svg'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from "@fortawesome/free-brands-svg-icons";
 
 const vuetify = createVuetify({
   components,
@@ -30,3 +31,4 @@ const vuetify = createVuetify({
 createApp(App).component('font-awesome-icon', FontAwesomeIcon).use(router).use(vuetify).mount('#app')
 
 library.add(fas) // Include needed icons
+library.add(fab) // Include needed icons
