@@ -10,7 +10,7 @@
     >
       <v-list>
         <v-list-item
-          prepend-avatar="/src/assets/bussinLogo.png"
+          prepend-avatar="./assets/bussinLogo.png"
           title="Abdelrhman Ashraf"
           subtitle="qouay555@gmail.com"
         ></v-list-item>

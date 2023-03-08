@@ -78,7 +78,7 @@
             <template v-slot:prepend>
               <v-avatar
                 color="grey-darken-3"
-                image="../../src/assets/bussinLogo.png"
+                image="../assets/bussinLogo.png"
               ></v-avatar>
             </template>
 
