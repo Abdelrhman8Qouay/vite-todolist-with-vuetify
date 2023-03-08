@@ -28,8 +28,16 @@
         >
         </v-list-item>
         <v-list-item
+          prepend-icon="fas fa-star"
+          color="warning"
+          title="Favorite Tasks"
+          value="favoritetasks"
+          to="/favtasks"
+        >
+        </v-list-item>
+        <v-list-item
           prepend-icon="fas fa-address-card"
-          color="indigo"
+          color="warning"
           title="About Page"
           value="about"
           to="/about"
@@ -53,17 +61,24 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import { ref, defineComponent } from "vue";
+import { ref } from "vue";
 
 const drawer = ref(false);
 
 // To Add Icons On This Page >>>>>
 // this is must have
+// Get Icons To Put It On { library } to get from it the icons
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faList, faAddressCard } from "@fortawesome/free-solid-svg-icons";
+import {
+  faList,
+  faAddressCard,
+  faStar,
+  faSquare,
+  faBars,
+} from "@fortawesome/free-solid-svg-icons";
 import { faVuejs } from "@fortawesome/free-brands-svg-icons";
 
-library.add([faList, faAddressCard]);
+library.add([faList, faAddressCard, faStar, faSquare, faBars]);
 library.add(faVuejs);
 </script>
 
